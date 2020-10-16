@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="to do list.css">
+    <link rel="stylesheet" type="text/css" href="css\to do list.css">
   </head>
   <body>
     <div class="header">
@@ -20,6 +19,6 @@
       <li>Comprehend interview questions</li>
     </ul>
     <button type="button" id="clear-list" onclick="removeAll()">Clear Items</button>
-    <script type="text/javascript" src="to do list.js"></script>
+    <script type="text/javascript" src="js\to do list.js"></script>
   </body>
 </html>
