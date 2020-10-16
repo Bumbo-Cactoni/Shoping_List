@@ -4,8 +4,36 @@
     <meta charset="utf-8">
     <title>Shoping List</title>
     <link rel="stylesheet" href="List.css">
+    <script>
+  	function addItem(){
+  		var newItem = document.createElement("div");
+  		newItem.innerHTML = document.getElementById("textBox").value;
+  		newItem.onclick = removeItem;
+  		document.getElementById("list").appendChild(newItem);
+  		saveList();
+  	}
+  	function removeItem() {
+  		document.getElementById("list").removeChild(this);
+  		saveList();
+  	}
+  	function saveList() {
+  		localStorage.storedList = document.getElementById("list").innerHTML;
+  	}
+  	function loadList() {
+  		document.getElementById("list").innerHTML = localStorage.storedList;
+  		for(var i = 0; i < list.children.length; i++){
+  			list.children[i].onclick = removeItem;
+  		}
+  	}
   </head>
   <body>
-    
+    <div class="all">
+    	<p> YOUR OWN LIST </p> <br/ >
+    	<input type="text" value="Type here to add to the list" id="textBox"/> <br/>
+    	<input type="button" value="Add to list"/ onclick="addItem();"> <br/>
+    	<div id="list"><br/></div> </div>
+    	<script>
+    		if(localStorage.storedList) {loadList();}
+    	</script>
   </body>
 </html>
